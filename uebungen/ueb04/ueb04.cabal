@@ -1,0 +1,29 @@
+name:                ueb04
+version:             1.0
+build-type:          Simple
+cabal-version:       2.0
+
+library
+  exposed-modules:    Polygon Graham Ghostbusters TestData
+  hs-source-dirs:     src
+  build-depends:      base, containers, xml
+  default-language:   Haskell2010
+
+-- Unit test suite
+test-suite ueb41
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is:        PolyTest.hs
+  build-depends:  ueb04, base, tasty, tasty-hunit
+
+test-suite ueb42
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is:        GrahamTest.hs
+  build-depends:  ueb04, base, tasty, tasty-hunit
+
+test-suite ueb43
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is:        GhostbusterTest.hs
+  build-depends:  ueb04, base, tasty, tasty-hunit
